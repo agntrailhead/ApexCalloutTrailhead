@@ -7,4 +7,14 @@ router.get('/', function(req, res, next){
   res.json({'Books': books});
 });
 
+/* POST new book */
+router.post('/', function(req, res, next){
+    var books = ['The Alchemist', 'Advanced Javascript for web developers'];
+    var newBook = req.body.book.name;
+    books.push(newBook);
+
+    res.json(books);
+});
+
+
 module.exports = router;
